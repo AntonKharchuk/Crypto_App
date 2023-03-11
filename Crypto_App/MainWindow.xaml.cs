@@ -35,7 +35,7 @@ namespace Crypto_App
         {
 
             _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri(@"https://cryptingup.com/api/");
+            _httpClient.BaseAddress = new Uri(@"https://api.coincap.io/v2/");
 
             Uri iconUri = new Uri(findMyDir(Environment.CurrentDirectory) + "icon.ico", UriKind.Absolute);
             this.Icon = BitmapFrame.Create(iconUri);
@@ -210,11 +210,11 @@ namespace Crypto_App
 
                     JObject assetsSearch = JObject.Parse(content);
 
-                    JToken result = assetsSearch["asset"];
+                    JToken result = assetsSearch["data"];
 
                     AssetData searchResult = result.ToObject<AssetData>();
 
-                    string pr = searchResult.price.Replace('.', ',');
+                    string pr = searchResult.priceUsd.Replace('.', ',');
 
                     bool valueIsThere = false;
 

@@ -60,7 +60,7 @@ namespace Crypto_App
             try
             {
                 _httpClient = new HttpClient();
-                _httpClient.BaseAddress = new Uri(@"https://cryptingup.com/api/");
+                _httpClient.BaseAddress = new Uri(@"https://api.coincap.io/v2/");
 
 
                 var response = _httpClient.GetAsync("assets").Result;
@@ -70,7 +70,7 @@ namespace Crypto_App
                 JObject assetsSearch = JObject.Parse(content);
 
                 // get JSON result objects into a list
-                List<JToken> results = assetsSearch["assets"].Children().ToList();
+                List<JToken> results = assetsSearch["data"].Children().ToList();
 
                 // serialize JSON results into .NET objects
                 List<AssetData> assets = new List<AssetData>();
@@ -82,7 +82,7 @@ namespace Crypto_App
                 }
                 foreach (var asset in assets)
                 {
-                    _strAssetsList.Add(asset.asset_id);
+                    _strAssetsList.Add(asset.id);
                 }
 
             }
