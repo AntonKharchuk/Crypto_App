@@ -10,17 +10,17 @@ namespace Cripto_App.Models
 {
     public class AssetData : INotifyPropertyChanged
     {
-        private string _asset_id;
+        private string _id;
         private string _name;
-        private string _price;
+        private string _priceUsd;
 
-        public string asset_id
+        public string id
         {
-            get { return _asset_id; }
+            get { return _id; }
             set
             {
-                _asset_id = value;
-                OnPropertyChanged("asset_id");
+                _id = value;
+                OnPropertyChanged("id");
             }
         }
         public string name
@@ -33,13 +33,13 @@ namespace Cripto_App.Models
             }
         }
 
-        public string price
+        public string priceUsd
         {
-            get { return _price; }
+            get { return _priceUsd; }
             set
             {
-                _price = value;
-                OnPropertyChanged("price");
+                _priceUsd = value;
+                OnPropertyChanged("priceUsd");
             }
         }
 
