@@ -27,18 +27,6 @@ namespace Crypto_App
     {
         private readonly HttpClient _httpClient;
 
-        private List<AssetData> _assets;
-
-        public List<AssetData> Assets
-        {
-            get { return _assets; }
-            set
-            {
-                _assets = value;
-                OnPropertyChanged("Assets");
-            }
-        }
-
         private List<string> _strAssetsList;
 
         public List<string> StrAssetsList
@@ -69,8 +57,6 @@ namespace Crypto_App
         {
             _strAssetsList = new List<string> { };
 
-            _assets = new List<AssetData> { };
-
             try
             {
                 _httpClient = new HttpClient();
@@ -87,14 +73,14 @@ namespace Crypto_App
                 List<JToken> results = assetsSearch["assets"].Children().ToList();
 
                 // serialize JSON results into .NET objects
-                List<AssetData> _assets = new List<AssetData>();
+                List<AssetData> assets = new List<AssetData>();
                 foreach (JToken result in results)
                 {
                     // JToken.ToObject is a helper method that uses JsonSerializer internally
                     AssetData searchResult = result.ToObject<AssetData>();
-                    _assets.Add(searchResult);
+                    assets.Add(searchResult);
                 }
-                foreach (var asset in _assets)
+                foreach (var asset in assets)
                 {
                     _strAssetsList.Add(asset.asset_id);
                 }
@@ -114,19 +100,5 @@ namespace Crypto_App
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-
-        string findMyDir(string path)
-        {
-            if (path.EndsWith("Cripto_App\\"))
-            {
-                return path;
-            }
-            else
-                return findMyDir(path.Remove(path.Length - 1));
-        }
-
     }
-
-
-
 }
