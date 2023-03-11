@@ -35,7 +35,7 @@ namespace Crypto_App
         {
 
             _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri(@"https://api.coincap.io/v2/");//add coment
+            _httpClient.BaseAddress = new Uri(@"https://api.coincap.io/v2/");//new sourse 
 
             Uri iconUri = new Uri(findMyDir(Environment.CurrentDirectory) + "icon.ico", UriKind.Absolute);
             this.Icon = BitmapFrame.Create(iconUri);
