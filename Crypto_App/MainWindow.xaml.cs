@@ -108,7 +108,7 @@ namespace Crypto_App
             TextBoxSearch.TextChanged += (s, e) => {
                 TextBox textToSearch = (TextBox)s;
                 string text = textToSearch.Text;
-                text = text.ToUpper();
+                text = text.ToLower();
                 List<string> ResLisr = new List<string> { };
                 foreach (var item in mvm.StrAssetsList)
                 {
