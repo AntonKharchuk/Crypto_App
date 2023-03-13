@@ -1,5 +1,5 @@
 # Crypto_App
-![.NetV](https://img.shields.io/static/v1?style=badge&message=5.0&color=blueviolet&label=.Net) ![WPF](https://img.shields.io/static/v1?message=WPF&color=navy&label=) ![realtime]( https://img.shields.io/static/v1?message=realtime&color=mediumpurple&label=) ![Forks](https://img.shields.io/github/forks/AntonKharchuk/PasswordsHash?style=social)
+![.NetV](https://img.shields.io/static/v1?style=badge&message=5.0&color=blueviolet&label=.Net) ![WPF](https://img.shields.io/static/v1?message=WPF&color=navy&label=) ![realtime]( https://img.shields.io/static/v1?message=realtime&color=mediumpurple&label=) ![Forks](https://img.shields.io/github/forks/AntonKharchuk/Crypto_App?style=social)
 
 **Crypto_App** - *is a program that will help you search for the latest info on the crypto market*
 
